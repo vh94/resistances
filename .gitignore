@@ -1,0 +1,11 @@
+# ignore all logfiles
+*.log
+# ignore all zipped files
+*.zip
+# ignore papers directory
+papers/
+# ignore fasta
+*.fna
+# ignore tsv
+*.tsv
+*.tab
