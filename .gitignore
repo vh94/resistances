@@ -4,8 +4,15 @@
 *.zip
 # ignore papers directory
 papers/
+*.pdf
 # ignore fasta
 *.fna
 # ignore tsv
 *.tsv
 *.tab
+# ignore raw 
+raw/
+# ignore DAtabases
+CARD_rgi_analysis/localdb/*
+# ignore json
+*.json

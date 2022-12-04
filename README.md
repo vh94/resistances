@@ -1,4 +1,3 @@
-
 ## Project for the Course Applied Omics MCB Coimbra 2022
 
 Investigate potential Genes which cause antibiocial resistance in the Proteobacterium Helicobacter pylori.
@@ -86,14 +85,55 @@ abricate --summary abricate_analysis/results/results_vfdb.tab > abricate_analysi
 
 Steps 1 & 2 are automatized in the script abricate_analysis/scripts/abricated_all_db_query.sh
 
-it reads all Fasta (.fna) files from abricate_analysis/fna_data/ 
+
 querys them against every installed database, 
 it then creates a summary for each of the databases
 
+
+## SNP resitances
+
+to find mutations leading to AR's use CARD rgi tool
+
+i install to a new env since rgi downgrades abricate and BLAST.
+```
+conda create -n card_rgi
+mamba install --channel conda-forge --channel bioconda --channel defaults rgi
+conda activate card_rgi
+cd CARD_rgi_analysis
+mkdir localDB
+cd localDB
+wget https://card.mcmaster.ca/latest/data
+tar -xvf data ./card.json
+
+```
+To run rgi analysis:
+
+```
+rgi main --input_sequence ../fna_data/Plasmids/Plasmids.fna --output_file ./plasimids_rgi_results --local --clean --include_loose
+```
+
+
+To create heatmap
+
+```
+
+```
+
+
 #### 3. Analyse the findings
 
+## Main plasmid vs plasimid (horizontal gene transfer)
+
+small cryptic plasmids (SCPs) role in anitbiotic resistance
+
+Plasiumid identifier list from escobar et al 2020 : "pyroliPlasmidNCBI_ids_Escobaretal_Peru.txt"
 
 
+## Geographical region
+
+
+## RM Systems
+massive R-M system repertoire (Krebes et al., 2014) that continues to be revealed by technological advances. Our results suggest that ∼10% of the genome encodes R-M systems. Notably, the type I and II R-M systems were located exclusively in the accessory genome, supporting the hypothesis that restriction enzymes may be part of a bacterial defensive network that contribute to lineage homogenization
 #### 4. compare with literature:
 
 - doi.org/10.1038/s41575-021-00449-x 
